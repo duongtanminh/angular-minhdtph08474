@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+	<div align="center" style="margin-bottom:30px;">
+		<h2>Motel Form</h2>
+	</div>
+	<form [formGroup]="motelForm">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Motel name :</span>
+			</div>
+			<input type="text" formControlName="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Owner :</span>
+			</div>
+						<input type="text" formControlName="owner" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Motel image :</span>
+				</div>
+				<input type="text" formControlName="image" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Motel address :</span>
+				</div>
+					<input type="text" formControlName="address" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Room_number :</span>
+			</div>
+			<input type="text" formControlName="room_number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+		<div align="center">
+		<button type="button" (click)="save()" class="btn btn-info">Save</button>
+    </div>
+	</form>
+</div>

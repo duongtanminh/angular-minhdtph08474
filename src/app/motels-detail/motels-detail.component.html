@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container">
+	<div *ngIf="motelData==null">
+		<div class="text-center">
+			<div class="spinner-border" role="status">
+				<span class="sr-only">Loading...</span>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="motelData!=null">
+		<div class="card text-center">
+		<div class="card-header">
+			INFORMATION MOTEL
+		</div>
+		<div class="card-body">
+			<img [src]="motelData.image" style="margin-bottom:20px;">
+			<h5 class="card-title">Name : {{motelData.name}}</h5>
+			<p class="card-text">Owner : {{motelData.owner}}</p>
+			<p class="card-text">Address : {{motelData.address}}</p>
+			<p class="card-text">Room_number : {{motelData.room_number}}</p>
+      <a [routerLink]="['../../edit-motel',motelData.id]" class="btn btn-primary">Edit</a>
+      &nbsp;&nbsp;
+      <a (click)="remove()" class="btn btn-danger">Delete</a>
+		</div>
+	</div>
+	</div>
+    &nbsp;
+<app-students-list></app-students-list>
+</div>

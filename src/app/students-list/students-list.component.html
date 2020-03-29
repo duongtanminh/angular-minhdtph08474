@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container">
+  <h2>List student of motel</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name Student</th>
+        <th scope="col">address</th>
+				<th scope="col">Roll_number</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of studentsData">
+				<th scope="row">{{data.id}}</th>
+				<td>{{data.name}}</td>
+        <td>{{data.address}}</td>
+				<td>{{data.roll_number}}</td>
+				<td><a [routerLink]="['student-detail', data.id]">Detail</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+  <button  [routerLink]="['../../add-student', mtId]" class="btn btn-success">
+  Add new student</button>
+
+</div>
