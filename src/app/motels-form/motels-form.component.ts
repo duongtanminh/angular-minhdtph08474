@@ -1,23 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MotelService } from "../motel.service";
 
 @Component({
-  selector: 'app-motels-form',
-  templateUrl: './motels-form.component.html',
-  styleUrls: ['./motels-form.component.css']
+  selector: "app-motels-form",
+  templateUrl: "./motels-form.component.html",
+  styleUrls: ["./motels-form.component.css"]
 })
 export class MotelsFormComponent implements OnInit {
-
   motelForm = new FormGroup({
     id: new FormControl(null),
-    name: new FormControl(""),
-    owner: new FormControl(""),
-    image: new FormControl(""),
-    address: new FormControl(""),
-    room_number: new FormControl(null)
+    name: new FormControl("", [Validators.required, Validators.minLength(4)]),
+    owner: new FormControl("", [Validators.required, Validators.minLength(6)]),
+    image: new FormControl("", [
+      Validators.required,
+      Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp)s/i)
+    ]),
+    address: new FormControl("", [
+      Validators.required,
+      Validators.minLength(7)
+    ]),
+    room_number: new FormControl(null, [Validators.required])
   });
+  get name() {
+    return this.motelForm.get("name");
+  }
+  get owner() {
+    return this.motelForm.get("owner");
+  }
+  get image() {
+    return this.motelForm.get("image");
+  }
+  get address() {
+    return this.motelForm.get("address");
+  }
+  get room_number() {
+    return this.motelForm.get("room_number");
+  }
 
   constructor(
     private MotelService: MotelService,
@@ -48,5 +68,4 @@ export class MotelsFormComponent implements OnInit {
       });
     }
   }
-
 }
