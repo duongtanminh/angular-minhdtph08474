@@ -42,7 +42,7 @@ export class StudentsFormComponent implements OnInit {
         room_no: new FormControl(null, [Validators.required])
       });
 
-      this.motelService.getMotelById(motelId).subscribe(data => {
+      this.motelService.getMotels().subscribe(data => {
         console.log(data);
         this.motelData = data;
       });

@@ -24,8 +24,8 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">Motel name:</span>
 			</div>
-      <select formcontrolname="motel" class="form-control">
-       <option  [value]="motelData.name" >{{motelData.name}}</option> 
+      <select formcontrolname="moteld" class="form-control">
+       <option *ngFor="let mt of motelData"  [value]="mt.id" >{{mt.name}}</option> 
       </select>
 			
       </div>
