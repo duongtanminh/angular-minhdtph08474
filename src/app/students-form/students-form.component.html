@@ -15,7 +15,7 @@
 				<span class="input-group-text" id="inputGroup-sizing-default">Student name:</span>
 			</div>
 			<input type="text" formControlName="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-			<div *ngIf="name.invalid && (name.touched || name.derty)">
+			<div *ngIf="name.invalid && (name.touched || name.dirty)">
 				<p *ngIf="name.errors.required" class="text-denger"> hay dien ho va ten</p>
 				<p *ngIf="name.errors.minlength" class="text-denger"> ho va ten it nhat 4 ky tu</p>
 			</div>
@@ -24,14 +24,17 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">Motel name:</span>
 			</div>
-			<input disabled type="text"  class="form-control" aria-label="Sizing example input" [value]="motelData.name" aria-describedby="inputGroup-sizing-default">
+      <select formcontrolname="motel" class="form-control">
+       <option  [value]="motelData.name" >{{motelData.name}}</option> 
+      </select>
+			
       </div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="inputGroup-sizing-default">Roll number:</span>
 				</div>
 				<input type="text" formControlName="roll_number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-				<div *ngIf="roll_number.invalid && (roll_number.touched || roll_number.derty)">
+				<div *ngIf="roll_number.invalid && (roll_number.touched || roll_number.dirty)">
 					<p *ngIf="roll_number.errors.required" class="text-denger"> hay dien </p>
 
 				</div>
@@ -41,7 +44,7 @@
 					<span class="input-group-text" id="inputGroup-sizing-default">Student image :</span>
 				</div>
 				<input type="text" formControlName="avatar" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-				<div *ngIf="avatar.invalid && (avatar.touched || avatar.derty)">
+				<div *ngIf="avatar.invalid && (avatar.touched || avatar.dirty)">
 					<p *ngIf="avatar.errors.required" class="text-denger"> nhap dia chi anh</p>
 					<p *ngIf="avatar.errors.pattern" class="text-denger"> dia chi anh khong phu hop</p>
 				</div>
@@ -51,7 +54,7 @@
 					<span class="input-group-text" id="inputGroup-sizing-default">Address</span>
 				</div>
 				<input type="text" formControlName="address" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-				<div *ngIf="address.invalid && (address.touched || address.derty)">
+				<div *ngIf="address.invalid && (address.touched || address.dirty)">
 					<p *ngIf="address.errors.required" class="text-denger"> nhap dia chi </p>
 					<p *ngIf="address.errors.minlength" class="text-denger"> dia chi it nhat 7 ky tu</p>
 				</div>
@@ -62,7 +65,7 @@
 					<span class="input-group-text" id="inputGroup-sizing-default">Room No:</span>
 				</div>
 				<input type="text" formControlName="room_no" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-				<div *ngIf="room_no.invalid && (room_no.touched || room_no.derty)">
+				<div *ngIf="room_no.invalid && (room_no.touched || room_no.dirty)">
 					<p *ngIf="room_no.errors.required" class="text-denger"> hay nhap </p>
 				</div>
 			</div>

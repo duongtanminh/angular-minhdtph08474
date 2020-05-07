@@ -11,7 +11,7 @@
 				<span class="input-group-text" id="inputGroup-sizing-default">Motel name :</span>
 			</div>
 			<input type="text" formControlName="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-			<div *ngIf="name.invalid && (name.touched || name.derty)">
+			<div *ngIf="name.invalid && (name.touched || name.dirty)">
 				<p *ngIf="name.errors.required" class="text-denger"> hay dien ho va ten</p>
 				<p *ngIf="name.errors.minlength" class="text-denger"> ho va ten it nhat 4 ky tu</p>
 			</div>
@@ -21,7 +21,7 @@
 				<span class="input-group-text" id="inputGroup-sizing-default">Owner :</span>
 			</div>
 			<input type="text" formControlName="owner" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-			<div *ngIf="owner.invalid && (owner.touched || owner.derty)">
+			<div *ngIf="owner.invalid && (owner.touched || owner.dirty)">
 				<p *ngIf="owner.errors.required" class="text-denger"> dien ten chu tro</p>
 				<p *ngIf="owner.errors.minlength" class="text-denger"> ten it nhat 6 ky tu</p>
 			</div>
@@ -31,7 +31,7 @@
 				<span class="input-group-text" id="inputGroup-sizing-default">Motel image :</span>
 			</div>
 			<input type="text" formControlName="image" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-			<div *ngIf="image.invalid && (image.touched || image.derty)">
+			<div *ngIf="image.invalid && (image.touched || image.dirty)">
 				<p *ngIf="image.errors.required" class="text-denger"> nhap dia chi anh</p>
 				<p *ngIf="image.errors.pattern" class="text-denger"> dia chi anh khong phu hop</p>
 			</div>
@@ -51,7 +51,7 @@
 				<span class="input-group-text" id="inputGroup-sizing-default">Room_number :</span>
 			</div>
 			<input type="text" formControlName="room_number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-			<div *ngIf="room_number.invalid && (room_number.touched || room_number.derty)">
+			<div *ngIf="room_number.invalid && (room_number.touched || room_number.dirty)">
 				<p *ngIf="room_number.errors.required" class="text-denger"> hay nhap</p>
 			</div>
 		</div>
